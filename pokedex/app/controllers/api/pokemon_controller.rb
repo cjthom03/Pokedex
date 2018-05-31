@@ -10,16 +10,4 @@ class Api::PokemonController < ApplicationController
     render :show
   end
 
-  def create
-
-  end
-
-
-
-
-
-
-
-
-
 end
