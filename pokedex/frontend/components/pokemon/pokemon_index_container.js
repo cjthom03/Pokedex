@@ -5,9 +5,10 @@ import PokemonIndex from './pokemon_index';
 
 
 
-const mapStateToProps = (state) => ({
-  pokemon: selectAllPokemon(state)
-});
+const mapStateToProps = (state) => {
+  // debugger;
+  return {pokemon: selectAllPokemon(state), loading: state.ui.loading};
+};
 
 const mapDispatchToProps = (dispatch) => ({
   requestAllPokemon: dispatch(requestAllPokemon())

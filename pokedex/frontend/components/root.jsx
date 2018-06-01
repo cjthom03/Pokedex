@@ -1,16 +1,19 @@
 
 import React from 'react';
 import { Provider } from 'react-redux';
+import { HashRouter, Route } from 'react-router-dom';
 import PokemonIndexContainer from './pokemon/pokemon_index_container';
+import PokemonDetailContainer from './pokemon/pokemon_detail_container';
 
 const Root = ({store}) => {
-  // console.log(store);
   return(
     <Provider store={store}>
-      <div>
-        <h1>Chardummy</h1>
-        <PokemonIndexContainer />
-      </div>
+      <HashRouter>
+        <div>
+          <Route path="/" component={PokemonIndexContainer} />
+          <Route path="/pokemon/:pokemonId" component={PokemonDetailContainer} />
+        </div>
+      </HashRouter>
     </Provider>
   );
 };
